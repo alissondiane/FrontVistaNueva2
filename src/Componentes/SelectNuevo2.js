@@ -8,7 +8,8 @@ class SelectNuevo2 extends React.Component {
     this.state = { 
       SelectedOption: '',
       lista_final:[],
-      programa:[]
+      programa:[],
+      select_ultimo: ''
     }
     this.mostrarNombre=this.mostrarNombre.bind(this);
   }
@@ -32,7 +33,7 @@ class SelectNuevo2 extends React.Component {
 
 
   handleChange = (selectedOption) => {
-
+    console.log(selectedOption);
     if(selectedOption != null){
       this.setState({ SelectedOption: selectedOption});
 /*       var opcionSeleccionada = this.state.programa[selectedOption.value];
@@ -43,10 +44,24 @@ class SelectNuevo2 extends React.Component {
       "codAlumno" :opcionSeleccionada.codAlumno,
       "idPrograma":opcionSeleccionada.idPrograma
       } */
-      this.props.Opcion(selectedOption.value);
+      this.setState({
+        select_ultimo:selectedOption.value
+      });
+      this.props.Opcion(selectedOption.value,true);
+      
     }else{
       this.setState({ SelectedOption:''
       });
+      console.log(this.state.select_ultimo);
+      
+        console.log("entro");
+        this.props.Opcion(this.state.select_ultimo,false);
+        this.setState({
+          select_ultimo:''
+        });
+
+      
+
     }
     
 
