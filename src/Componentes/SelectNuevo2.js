@@ -8,7 +8,8 @@ class SelectNuevo2 extends React.Component {
     this.state = { 
       SelectedOption: '',
       lista_final:[],
-      programa:[]
+      programa:[],
+      select_ultimo: ''
     }
     this.mostrarNombre=this.mostrarNombre.bind(this);
   }
@@ -32,7 +33,7 @@ class SelectNuevo2 extends React.Component {
 
 
   handleChange = (selectedOption) => {
-
+    console.log(selectedOption);
     if(selectedOption != null){
       this.setState({ SelectedOption: selectedOption});
 /*       var opcionSeleccionada = this.state.programa[selectedOption.value];
@@ -43,12 +44,30 @@ class SelectNuevo2 extends React.Component {
       "codAlumno" :opcionSeleccionada.codAlumno,
       "idPrograma":opcionSeleccionada.idPrograma
       } */
-      this.props.Opcion(selectedOption.value);
+      this.setState({
+        select_ultimo:selectedOption.value
+      });
+      this.props.Opcion(selectedOption.value,true);
+      
     }else{
+<<<<<<< HEAD
       console.log("quito la opcion seleccionada")
       //mandaria la opcion seleccionada antes para que se elimine del listado de insertar
       //en pago-listnuevo2
       this.setState({ SelectedOption:''});
+=======
+      this.setState({ SelectedOption:''
+      });
+      console.log(this.state.select_ultimo);
+      
+        console.log("entro");
+        this.props.Opcion(this.state.select_ultimo,false);
+        this.setState({
+          select_ultimo:''
+        });
+
+      
+>>>>>>> f0e0d7abf83a9ad17dc186e1c3a3c8a7947a648e
 
     }
     

@@ -23,6 +23,7 @@ class PagoListNuevo2 extends React.Component {
     this.OpcionSeleccionada=this.OpcionSeleccionada.bind(this);
     this.pagoInsertar = [];
     this.Asignar=this.Asignar.bind(this);
+    
 
   }
 
@@ -37,11 +38,35 @@ class PagoListNuevo2 extends React.Component {
 
  }
 
-  OpcionSeleccionada(opcion) {
+
+  OpcionSeleccionada(opcion,mantener) {
 
     if(opcion != null){
-   
-    this.pagoInsertar.push(opcion);
+    if(mantener){
+      var array=this.pagoInsertar.filter((e)=>{return e.idAlumno==opcion.idAlumno });
+      if(array.length==0){
+        console.log("no hay, se va a insertar");
+        this.pagoInsertar.push(opcion);
+      }else{
+        console.log("ya hay, se va a reemplazar");
+        this.pagoInsertar.map(function(dato){
+          if(dato.idAlumno==opcion.idAlumno){
+            dato.idPrograma=opcion.idPrograma;
+            dato.codAlumno=opcion.codAlumno;
+          }
+        });
+      }
+      
+    }else{
+      console.log("wa borrar");
+      console.log(opcion);
+      var array=this.pagoInsertar.filter((e)=>{return e.idAlumno!==opcion.idAlumno && e.codAlumno!==opcion.codAlumno });
+      console.log("array filtrado");
+      console.log(array);
+      this.pagoInsertar=array;
+      //
+    }
+    
     console.log("pago insertar")
     console.log(this.pagoInsertar);
 
