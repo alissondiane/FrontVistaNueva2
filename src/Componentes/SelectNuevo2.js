@@ -45,8 +45,11 @@ class SelectNuevo2 extends React.Component {
       } */
       this.props.Opcion(selectedOption.value);
     }else{
-      this.setState({ SelectedOption:''
-      });
+      console.log("quito la opcion seleccionada")
+      //mandaria la opcion seleccionada antes para que se elimine del listado de insertar
+      //en pago-listnuevo2
+      this.setState({ SelectedOption:''});
+
     }
     
 
