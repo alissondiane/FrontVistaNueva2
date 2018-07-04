@@ -43,7 +43,20 @@ class PagoListNuevo2 extends React.Component {
 
     if(opcion != null){
     if(mantener){
-      this.pagoInsertar.push(opcion);
+      var array=this.pagoInsertar.filter((e)=>{return e.idAlumno==opcion.idAlumno });
+      if(array.length==0){
+        console.log("no hay, se va a insertar");
+        this.pagoInsertar.push(opcion);
+      }else{
+        console.log("ya hay, se va a reemplazar");
+        this.pagoInsertar.map(function(dato){
+          if(dato.idAlumno==opcion.idAlumno){
+            dato.idPrograma=opcion.idPrograma;
+            dato.codAlumno=opcion.codAlumno;
+          }
+        });
+      }
+      
     }else{
       console.log("wa borrar");
       console.log(opcion);
