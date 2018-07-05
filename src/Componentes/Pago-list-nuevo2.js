@@ -132,7 +132,6 @@ class PagoListNuevo2 extends React.Component {
         <div className="SplitPane row center-xs">  
                 <button  onClick={this.Asignar} className="waves-effect waves-light btn-large botonazul2 center"type="submit">Asignar<i className="large material-icons left">check</i></button>
         </div>
-        <div>{this.props.nombreBusqueda}</div>
       </div>
     )
     }else{

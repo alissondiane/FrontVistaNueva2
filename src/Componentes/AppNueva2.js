@@ -51,8 +51,8 @@ PagoAsignar(opcion) {
     this.setState({
       arregloInsertar:opcion
     });
-    console.log("opcion de array")
-    console.log(opcion)
+    // console.log("opcion de array")
+    // console.log(opcion)
   }
 
 }
@@ -108,11 +108,11 @@ Asignar=(e)=>{
      opcionesSeleccionadas.push(item.id);
     }
     
-    console.log("opciones seleccionadas");
-    console.log(opcionesSeleccionadas);
+    // console.log("opciones seleccionadas");
+    // console.log(opcionesSeleccionadas);
     var listado2 = this.state.pagocero;
-    console.log("listado 2");
-    console.log(listado2);
+    // console.log("listado 2");
+    // console.log(listado2);
     var indices=[];
     
     for (let i = 0; i < listado2.length; i++) {
@@ -191,12 +191,12 @@ Asignar=(e)=>{
 }
 enviar(){
 
-  console.log("lo que envio:");
-  console.log(this.state.pagocero);
+  // console.log("lo que envio:");
+  // console.log(this.state.pagocero);
 }
 BuscarNombre(busqueda) {
-   console.log("Nombre ingresado");
-   console.log(busqueda.nombres);
+  //  console.log("Nombre ingresado");
+  //  console.log(busqueda.nombres);
     let nombre = busqueda.nombres;
     this.setState({
       nombre: nombre
@@ -230,8 +230,8 @@ BuscarNombre(busqueda) {
       })
       .then((pagos) => {
       
-      console.log("Listado de pagos recibidos");
-      console.log(pagos);
+      // console.log("Listado de pagos recibidos");
+      // console.log(pagos);
 
       var listado1 =[];
       var opciones  = [];
@@ -253,8 +253,8 @@ BuscarNombre(busqueda) {
       }
 
 
-      console.log("arreglo con join con espacios")
-      console.log(nombrenuevo2);
+      // console.log("arreglo con join con espacios")
+      // console.log(nombrenuevo2);
       for (let i = 0; i< listado1.length; i++) {
         var apeNombre = listado1[i].apeNom;
         var separador1 = " "; // un espacio en blanco
@@ -269,13 +269,13 @@ BuscarNombre(busqueda) {
           }
         }
         
-        console.log("arreglo sin espacios en blanco para alumno programa");
-        console.log(arreglo1);
+        // console.log("arreglo sin espacios en blanco para alumno programa");
+        // console.log(arreglo1);
     
         var nombrenuevo2 = arreglo1.join(" ");
 
-        console.log("arreglo a enviar al servicio alumno programa")
-        console.log(nombrenuevo2)
+        // console.log("arreglo a enviar al servicio alumno programa")
+        // console.log(nombrenuevo2)
 
        /*  this.setState({
           nombre_select:nombrenuevo2

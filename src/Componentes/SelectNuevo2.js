@@ -13,24 +13,6 @@ class SelectNuevo2 extends React.Component {
     }
     this.mostrarNombre=this.mostrarNombre.bind(this);
   }
-  componentWillMount() {
-    //this.mostrarNombre();
-  }
-  mostrarNombre=()=>{
-    console.log(this.props.nombre)
-    var listado1=[];
-    fetch('https://modulo-alumno-jdbc.herokuapp.com/alumno/alumnoprograma/programa/listar/restringido/'+this.props.nombre)
-          .then((response) => {
-          return response.json()
-          })
-          .then((programa) => {
-            this.setState({programa: programa});
-          })
-          .catch(error => {
-          console.error(error)
-          });
-  }
-
 
   handleChange = (selectedOption) => {
     console.log(selectedOption);

@@ -36,7 +36,6 @@ class PagoRowNuevo2 extends React.Component {
       <td className="td1">{this.props.pago.apeNom}</td>
       <td className="td1">{this.props.pago.idAlum}</td>
       <td className="td1">{this.props.pago.codigo}</td>
-      <td className="td1">{this.props.pago.idFacultad}</td>
       <td className="td1"><SelectNuevo2 Opcion={this.OpcionSeleccionada} nombre={this.props.pago.apeNom} listado = {this.props.pago.codigos}/></td>
 	</tr>
     )
