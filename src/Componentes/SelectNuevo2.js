@@ -50,12 +50,6 @@ class SelectNuevo2 extends React.Component {
       this.props.Opcion(selectedOption.value,true);
       
     }else{
-<<<<<<< HEAD
-      console.log("quito la opcion seleccionada")
-      //mandaria la opcion seleccionada antes para que se elimine del listado de insertar
-      //en pago-listnuevo2
-      this.setState({ SelectedOption:''});
-=======
       this.setState({ SelectedOption:''
       });
       console.log(this.state.select_ultimo);
@@ -65,13 +59,7 @@ class SelectNuevo2 extends React.Component {
         this.setState({
           select_ultimo:''
         });
-
-      
->>>>>>> f0e0d7abf83a9ad17dc186e1c3a3c8a7947a648e
-
     }
-    
-
   }
 
   componentWillReceiveProps(){

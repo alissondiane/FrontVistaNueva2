@@ -58,19 +58,21 @@ class PagoListNuevo2 extends React.Component {
       }
       
     }else{
-      console.log("wa borrar");
+      console.log("se va a borrar");
       console.log(opcion);
-      var array=this.pagoInsertar.filter((e)=>{return e.idAlumno!==opcion.idAlumno && e.codAlumno!==opcion.codAlumno });
+      var array=this.pagoInsertar.filter((e)=>{return e.idAlumno!==opcion.idAlumno});
       console.log("array filtrado");
       console.log(array);
       this.pagoInsertar=array;
       //
     }
     
-    console.log("pago insertar")
-    console.log(this.pagoInsertar);
+    // console.log("pago insertar")
+    // console.log(this.pagoInsertar);
 
     }
+    console.log("Listado de pagos luego de realizar una insercion");
+    console.log(this.pagoInsertar);
   }
   Asignar=(e)=>{
   
